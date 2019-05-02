@@ -28,11 +28,15 @@ In this case the start month and end month resp. start day and end day are the s
 #### Example:
 The following example shows a temporal expression for the first christmas holiday (this is in Switzerland the 25th of december):
 
-* `DayToDayInYear CHRISTMAS_HOLIADY_FIRST = new DayToDayInYear(Month.DECEMBER, Month.DECEMBER ,25,25); // first Christmas holiday` 
+```java
+DayToDayInYear CHRISTMAS_HOLIADY_FIRST = new DayToDayInYear(Month.DECEMBER, Month.DECEMBER ,25,25); // first Christmas holiday
+```
 
 This temporal expression covers the easter holidays in Switzerland for the year 2019:
 
-* `DayToDayInYear SWISS_EASTER_HOLIDAYS_2019 = new DayToDayInYear(Month.APRIL, Month.APRIL,19,22)); //Easter holidays` 
+```java
+DayToDayInYear SWISS_EASTER_HOLIDAYS_2019 = new DayToDayInYear(Month.APRIL, Month.APRIL,19,22)); //Easter holidays
+```
 
 
 ### WeekDayToWeekDay
@@ -42,7 +46,9 @@ This temporal expression covers weekday-to-weekday ranges (e.g. monday to thursd
 
 This example represents the time from monday, 00:00h to friday, 23:59h:
 
-`WeekDayToWeekDayRange workingDays  = new WeekDayToWeekDayRange(DayOfWeek.MONDAY, DayOfWeek.FRIDAY,0, 23);`
+```java
+WeekDayToWeekDayRange workingDays  = new WeekDayToWeekDayRange(DayOfWeek.MONDAY, DayOfWeek.FRIDAY,0, 23);
+```
 
 Note that in the above example we do not use start minute and end minute in the constructor. In this case the default values will be used (0 for start minute resp. 59 for end minute)
 
@@ -51,7 +57,9 @@ This temporal expression is used to check for n-th weekday in a month, e.g. seco
 
 #### Example:
 
-`WeekDayInMonth SECOND_TUESDAY_IN_MONTH = new WeekDayInMonth(DayOfWeek.TUESDAY, 2));`
+```java
+WeekDayInMonth SECOND_TUESDAY_IN_MONTH = new WeekDayInMonth(DayOfWeek.TUESDAY, 2));
+```
 
 # Usage of operations
 
