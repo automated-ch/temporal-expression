@@ -28,6 +28,10 @@ import ch.automated.temporal.TemporalExpression;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+
+/**
+ * Check if a temporal expression is in one temporal expression but not another.
+ */
 public class Difference extends TemporalExpression implements Serializable{
     
 	private TemporalExpression included;

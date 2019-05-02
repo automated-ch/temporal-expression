@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- *
+ *Testsuite to execute all tests
  * @author wit
  */
 @RunWith(Suite.class)

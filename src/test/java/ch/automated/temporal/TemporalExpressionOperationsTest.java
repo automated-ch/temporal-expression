@@ -51,8 +51,13 @@ import org.junit.Test;
  */
 public class TemporalExpressionOperationsTest {
 
+
+    /**
+     * Test {@link Union} operation.
+     */
     @Test
     public void unionWeekDayInMonthExpressionTest() {
+
         Union mon13 = new Union();
         mon13.add(new WeekDayInMonth(DayOfWeek.MONDAY, 1));
         mon13.add(new WeekDayInMonth(DayOfWeek.MONDAY, 3));
@@ -96,9 +101,11 @@ public class TemporalExpressionOperationsTest {
      * WeekDayInMonth      WeekDayInMonth
      * 
      */
-    
-    
-    
+
+
+    /**
+     * This testcase is inspired by the referenced resouces.
+     */
     @Test
     public void streetCleaningTest() {
 
@@ -156,11 +163,15 @@ public class TemporalExpressionOperationsTest {
         
           // SerializationService.serializeTemporalExpression(differenceTE);
     }
-    
-    
+
+    /**
+     * This test covers {@link Difference}
+     */
     @Test
-    public void workdayTestSerialize(){
+    public void differenceOperationTest(){
+
         WeekDayToWeekDayRange workingDays = new WeekDayToWeekDayRange(DayOfWeek.MONDAY, DayOfWeek.FRIDAY, 6, 19);
+
         Difference workNoWithHolidays = new Difference(workingDays, CH_PublicHolidays.ch_ch_holidays);
         workNoWithHolidays.setName("Workdays without holidays");
         

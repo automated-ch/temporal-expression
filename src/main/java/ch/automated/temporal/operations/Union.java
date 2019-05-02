@@ -32,11 +32,20 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The union operation of two sets A and B is the set of elements which are in A, in B, or in both A and B.
+ */
 public class Union extends TemporalExpression implements Serializable{
 
 	List<TemporalExpression> elements = new ArrayList<TemporalExpression>();
 
-	@Override
+    /**
+     * check if a date is included in any of the provided temporal expressions
+     *
+     * @param aDate
+     * @return
+     */
+    @Override
 	public boolean includes(LocalDateTime aDate) {
 		for (TemporalExpression e : elements) {
 			if (e.includes(aDate))
