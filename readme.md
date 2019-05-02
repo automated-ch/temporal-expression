@@ -1,7 +1,7 @@
 # evaluation of recurring events
-This library covers the evaluation of recurring events and supports following types of recurring events:
+This library covers the evaluation of recurring events with minute resolution and supports following types of recurring events:
 
- * **DayToDayInYear** (e.g. 27.06. to 31.10.)
+ * **DayToDayInYear** (e.g. from 27.06. 07:46h to 31.10. 14:37h)
  * **WeekdayToWeekDay** (e.g. monday to tuesday)
  * **WeekDayInMonth** (e.g. second tuesday in a month)
  
@@ -11,7 +11,7 @@ These temporal expressions can be combined in the following operations
  * **Intersection** 
  * **Union** (e.g. all public holidays during a year)
  
-Based on the interpreter pattern it is possible to combine all of the above mentioned temporal expressions and operations
+Based on the interpreter pattern it is possible to combine all of the above mentioned temporal expressions and operations.
 
 # Usage of temporal expressions
 
