@@ -84,7 +84,7 @@ This operation can be used to exclude temporal expressions from an other tempora
 
 ####Example:
 
-```
+```java
     WeekDayToWeekDayRange workingDays = new WeekDayToWeekDayRange(DayOfWeek.MONDAY, DayOfWeek.FRIDAY, 6, 19);
         Difference workNoWithHolidays = new Difference(workingDays, CH_PublicHolidays.ch_ch_holidays);
 ```
@@ -95,7 +95,7 @@ The above example represents a recurring event every weekday but not on swiss pu
 
 ####Example:
 
-```
+```java
 Intersection winterIsComing = new Intersection();
 winterIsComing.add(new DayToDayInYear(Month.MARCH, Month.SEPTEMBER));
 winterIsComing.add(new DayToDayInYear(Month.JULY, Month.DECEMBER));
@@ -107,7 +107,7 @@ LocalDateTime thisIsNotWinter = LocalDateTime.of(2019, Month.AUGUST, 4, 14, 53);
 assertTrue("Date should match!", winterIsComing.includes(thisIsNotWinter));
 ```
 
-# predefine values
+#predefine values
 
 
 
