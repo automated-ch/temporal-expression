@@ -1,0 +1,95 @@
+/*
+ * The MIT License
+ *
+ * Copyright 2019-03-01 automated.ch, Tobi Tiggers.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+package ch.automated.temporal.ranges;
+
+import ch.automated.temporal.TemporalExpression;
+
+import java.io.Serializable;
+import java.time.DayOfWeek;
+import java.time.LocalDateTime;
+
+/**
+ *
+ * @author wit
+ */
+public class WeekDayInMonth extends TemporalExpression implements Serializable{
+
+    private DayOfWeek weekDayInMonth;
+    private int weekInMonth;
+
+    public WeekDayInMonth(DayOfWeek weekDayInMonth, int weekInMonth) {
+        this.weekDayInMonth = weekDayInMonth;
+        this.weekInMonth = weekInMonth;
+    }
+
+    @Override
+    public boolean includes(LocalDateTime aDate) {
+        return weekDayMatches(aDate) && weekMatches(aDate);
+    }
+
+    private boolean weekDayMatches(LocalDateTime date) {
+        return date.getDayOfWeek().equals(weekDayInMonth);
+    }
+
+    private boolean weekMatches(LocalDateTime date) {
+        if (weekInMonth > 0) {
+            return weekFromStartMatches(date);
+        } else {
+            return weekFromEndMatches(date);
+        }
+    }
+
+    private boolean weekFromStartMatches(LocalDateTime date) {
+        return this.weekInMonth(date.getDayOfMonth()) == weekInMonth;
+    }
+
+    private boolean weekFromEndMatches(LocalDateTime date) {
+        int dayFromMonthsEnd = dayLeftInMonth() + 1;
+        return this.weekInMonth(dayFromMonthsEnd) == Math.abs(weekInMonth);
+    }
+
+    private int weekInMonth(int dayNumber) {
+        return ((dayNumber - 1) / 7) + 1;
+    }
+
+    private int dayLeftInMonth() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public DayOfWeek getWeekDayInMonth() {
+        return weekDayInMonth;
+    }
+
+
+    public int getWeekInMonth() {
+        return weekInMonth;
+    }
+
+    @Override
+    public String info() {
+        return "WeekDayInMonth: WeekDayInMonth[" +getWeekDayInMonth()+"]" 
+                + "WeekInMonth[" +getWeekInMonth()+"]\n";
+    }
+
+}
