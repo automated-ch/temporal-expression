@@ -1,5 +1,5 @@
 # evaluation of recurring events
-This library covers the evaluation of recurring events.
+This library covers the evaluation of recurring events and supports following types of recurring events:
 
  * **DayToDayInYear** (e.g. 27.06. to 31.10.)
  * **WeekdayToWeekDay** (e.g. monday to tuesday)
