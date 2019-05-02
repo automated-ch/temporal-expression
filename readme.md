@@ -25,7 +25,7 @@ This temporal expression covers day-to-day ranges in a year and supports date ro
 Different from what the name might suggest that temporal expression covers ranges it can be usd to cover public holidays
 In this case the start month and end month resp. start day and end day are the same.
 
-###Example:
+###Example
 The following example shows a temporal expression for the first christmas holiday (this is in Switzerland the 25th of december):
 
 * `DayToDayInYear CHRISTMAS_HOLIADY_FIRST = new DayToDayInYear(Month.DECEMBER, Month.DECEMBER ,25,25); // first Christmas holiday` 
