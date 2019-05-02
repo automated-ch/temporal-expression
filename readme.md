@@ -29,13 +29,15 @@ In this case the start month and end month resp. start day and end day are the s
 The following example shows a temporal expression for the first christmas holiday (this is in Switzerland the 25th of december):
 
 ```java
-DayToDayInYear CHRISTMAS_HOLIADY_FIRST = new DayToDayInYear(Month.DECEMBER, Month.DECEMBER ,25,25); // first Christmas holiday
+// first Christmas holiday
+DayToDayInYear CHRISTMAS_HOLIADY_FIRST = new DayToDayInYear(Month.DECEMBER, Month.DECEMBER ,25,25); 
 ```
 
 This temporal expression covers the easter holidays in Switzerland for the year 2019:
 
 ```java
-DayToDayInYear SWISS_EASTER_HOLIDAYS_2019 = new DayToDayInYear(Month.APRIL, Month.APRIL,19,22)); //Easter holidays
+//Easter holidays
+DayToDayInYear SWISS_EASTER_HOLIDAYS_2019 = new DayToDayInYear(Month.APRIL, Month.APRIL,19,22)); 
 ```
 
 
