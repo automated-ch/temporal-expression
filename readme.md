@@ -25,7 +25,7 @@ This temporal expression covers day-to-day ranges in a year and supports date ro
 Different from what the name might suggest that temporal expression covers ranges it can be usd to cover public holidays
 In this case the start month and end month resp. start day and end day are the same.
 
-###Example
+### Example:
 The following example shows a temporal expression for the first christmas holiday (this is in Switzerland the 25th of december):
 
 * `DayToDayInYear CHRISTMAS_HOLIADY_FIRST = new DayToDayInYear(Month.DECEMBER, Month.DECEMBER ,25,25); // first Christmas holiday` 
@@ -38,7 +38,7 @@ This temporal expression covers the easter holidays in Switzerland for the year 
 ## WeekDayToWeekDay
 This temporal expression covers weekday-to-weekday ranges (e.g. monday to thursday) and supports weekday rollovers (e.g. friday to tuesday)
 
-###Example:
+### Example:
 
 This example represents the time from monday, 00:00h to friday, 23:59h:
 
@@ -58,7 +58,7 @@ This temporal expression is used to check for n-th weekday in a month, e.g. seco
 ##Union
 This operation can be used to combine *temporal expression* and/or *operations*
 
-###Example:
+### Example:
 The following represents all fixed date public holidays in Switzerland (there might be some locally differing holidys)
 
 ```java
@@ -82,7 +82,7 @@ holidays.includes(nationalHoliday); // this returns TRUE since this is the natio
 ##Difference
 This operation can be used to exclude temporal expressions from an other temporal expression. A sample usecase is to exclude public holidays from a time interval.
 
-###Example:
+### Example:
 
 ```java
     WeekDayToWeekDayRange workingDays = new WeekDayToWeekDayRange(DayOfWeek.MONDAY, DayOfWeek.FRIDAY, 6, 19);
@@ -93,7 +93,7 @@ The above example represents a recurring event every weekday but not on swiss pu
 ##Intersection
 
 
-###Example:
+### Example:
 
 ```java
 Intersection winterIsComing = new Intersection();
