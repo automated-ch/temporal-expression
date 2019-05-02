@@ -1,5 +1,5 @@
 # evaluation of recurring events
-This library covers the evaluation of recurring events with minute resolution and supports following types of recurring events:
+This library covers the evaluation of recurring events with *minute resolution* and supports following types of recurring events:
 
  * **DayToDayInYear** (e.g. from 27.06. 07:46h to 31.10. 14:37h)
  * **WeekdayToWeekDay** (e.g. monday to tuesday)
